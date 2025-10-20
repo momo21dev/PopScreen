@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+body {
+    background-color: #511D43;
+}
+
+@font-face {
+    font-family: "bungee";
+    src: url("/fonts/Bungee-Regular.ttf");
+}
