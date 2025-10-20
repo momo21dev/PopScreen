@@ -4,6 +4,7 @@ import './App.css'
 
 import Home from './components/Home'
 import SingleMovie from './components/SingleMovie'
+import Footer from './components/Footer'
 
 function App() {
   //const [movies, setMovies] = useState([])
@@ -15,6 +16,7 @@ function App() {
           <Route path='/movie/:id' element={<SingleMovie />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
 
     </>
   )

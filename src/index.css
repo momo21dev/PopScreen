@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-
+body{
+    background-color: black;
+}
 
 @font-face {
     font-family: "bungee";
