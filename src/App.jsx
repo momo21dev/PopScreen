@@ -1,15 +1,21 @@
-import { useEffect, useState } from 'react'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { useApi } from './hooks/useApi'
-import { useData } from './hooks/useData'
+
 import Home from './components/Home'
+import SingleMovie from './components/SingleMovie'
 
 function App() {
   //const [movies, setMovies] = useState([])
   return (
     <>
-    
-      <Home />  
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/movie/:id' element={<SingleMovie />} />
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 }

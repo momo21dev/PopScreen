@@ -48,10 +48,11 @@ export default function Home() {
   }, [search, page, category, sortBy]);
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen  text-white">
-     
-      <div className="md:w-[220px] ">
-        <div className="flex justify-between items-center md:block p-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-black text-white flex flex-col md:flex-row">
+      
+      
+      <div className="md:w-[240px]   p-5 md:p-6">
+        <div className="flex justify-between items-center md:block">
           <h2
             className="text-[#9BC09C] text-xl font-bold md:mb-6 text-center"
             style={{ fontFamily: "bungee" }}
@@ -59,7 +60,6 @@ export default function Home() {
             Categories
           </h2>
 
-          
           <button
             onClick={() => setShowCategories(!showCategories)}
             className="md:hidden bg-[#9BC09C] text-black px-3 py-1 rounded-lg text-sm font-semibold transition-all hover:opacity-90"
@@ -68,11 +68,10 @@ export default function Home() {
           </button>
         </div>
 
-       
         <div
           className={`${
             showCategories ? "block" : "hidden"
-          } md:block px-4 pb-3 md:pb-0 transition-all duration-300`}
+          } md:block mt-4 px-2 transition-all duration-300`}
         >
           <div className="flex flex-wrap md:flex-col gap-3 md:gap-2 overflow-y-auto md:overflow-visible max-h-[250px] md:max-h-none">
             <Category setCategory={setCategory} />
@@ -81,19 +80,23 @@ export default function Home() {
       </div>
 
       
-      <div className="flex-1 flex flex-col items-center px-3 sm:px-6 py-4">
+      <div className="flex-1 flex flex-col items-center px-4 sm:px-6 lg:px-10 py-6">
         <NavBar
           search={search}
           handleShowPopular={handleShowPopular}
           onSearch={(value) => setSearch(value)}
         />
 
-        <div className="w-full flex justify-center mb-4">
+        <div className="w-full flex justify-center mb-6">
           <SortBy setSortBy={setSortBy} />
         </div>
 
-        {loading && <p className="text-gray-400 mt-6">Loading...</p>}
-        {error && <p className="text-red-400 mt-6">Failed to load data</p>}
+        {loading && (
+          <p className="text-gray-400 mt-6 animate-pulse">Loading...</p>
+        )}
+        {error && (
+          <p className="text-red-400 mt-6 font-medium">Failed to load data</p>
+        )}
 
         <MovieGrid movies={movies} />
         <Pagination setPage={setPage} data={data} />
