@@ -39,6 +39,13 @@ export default function SingleMovie() {
     useEffect(() => {
         fetchMovie();
     }, [id]);
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            
+        });
+    }, [id]);
+
 
     if (!movie)
         return (

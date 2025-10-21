@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Category({ setCategory }) {
+export default function Category({ setCategory, setPage, setSortBy, setSearch }) {
   const [data, setData] = useState(null);
 
   async function FetchCategory() {
@@ -15,14 +15,22 @@ export default function Category({ setCategory }) {
     FetchCategory();
   }, []);
 
+ 
+  function handleCategoryChange(id) {
+    setCategory(id);
+    setSortBy("");
+    setSearch("");
+    setPage(1);
+  }
+
   return (
     <>
-     
+      
       <div className="hidden md:grid grid-cols-1 gap-2">
         {data?.genres.map((c) => (
           <button
             key={c.id}
-            onClick={() => setCategory(c.id)}
+            onClick={() => handleCategoryChange(c.id)}
             className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-all"
           >
             {c.name}
@@ -30,10 +38,10 @@ export default function Category({ setCategory }) {
         ))}
       </div>
 
-      
+    
       <div className="md:hidden">
         <select
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={(e) => handleCategoryChange(e.target.value)}
           className="w-full bg-gray-800 text-white px-4 py-2 rounded-md focus:ring-2 focus:ring-gray-600 outline-none"
         >
           <option value="">Select Category</option>
