@@ -5,16 +5,16 @@ export default function MovieGrid({ movies }) {
     <div className="flex justify-center px-4 sm:px-6 lg:px-10 py-10 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-black w-full">
       <div
         className="
-          grid
-          grid-cols-2
-          sm:grid-cols-3
-          md:grid-cols-5
-          gap-6
-          sm:gap-8
-          justify-center
-          max-w-7xl
+          grid 
+          gap-6 
+          sm:gap-8 
+          justify-center 
+          max-w-7xl 
           w-full
         "
+        style={{
+          gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))",
+        }}
       >
         {movies?.map((m) => (
           <Link key={m.id} to={`/movie/${m.id}`}>
@@ -30,10 +30,9 @@ export default function MovieGrid({ movies }) {
                 duration-300
                 flex
                 flex-col
-                w-full
-                max-w-[210px]
                 mx-auto
                 border border-gray-800
+                w-[210px]
               "
             >
               <img
@@ -45,7 +44,7 @@ export default function MovieGrid({ movies }) {
               <div className="p-4 flex flex-col flex-1 justify-between">
                 <h3
                   className="text-[#9BC09C] text-sm sm:text-base font-semibold mb-2 line-clamp-2 text-center"
-                  style={{ fontFamily: 'bungee' }}
+                  style={{ fontFamily: "bungee" }}
                 >
                   {m.original_title}
                 </h3>
