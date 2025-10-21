@@ -1,16 +1,23 @@
-# React + Vite
+🎬 PopScreen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PopScreen is a modern web app that displays the latest and most popular movies
+✨ Features
 
-Currently, two official plugins are available:
+🔍 Search for movies by title
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📄 View detailed movie info (poster, release date, rating, overview)
 
-## React Compiler
+🌟 Browse popular movies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📱 Fully responsive design for all devices
 
-## Expanding the ESLint configuration
+⚡ Super-fast performance with Vite & React Hooks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+🛠️ Tech Stack
+Technology	Purpose
+⚛️ React	UI components & structure
+⚡ Vite	Fast development and build tool
+🎨 Tailwind CSS	Styling and responsiveness
+🎥 TMDb API	Movie data source
+🧠 React Hooks	State management and data fetching
